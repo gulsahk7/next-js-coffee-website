@@ -66,7 +66,7 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="md:hidden bg-gray-100 backdrop-blur-md border-t border-green-400">
-          <div className="flex flex-col gap-4 font-medium text-green-700 p-4">
+          <div className="flex flex-col gap-4 font-medium text-green-700 p-4 items-center">
             <a
               href="/"
               onClick={() => setIsOpen(false)}
