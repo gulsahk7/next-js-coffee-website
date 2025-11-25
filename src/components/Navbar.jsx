@@ -9,21 +9,23 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white/60 backdrop-blur-xl border-b border-green-400 ">
       <div className="flex justify-between max-w-6xl mx-auto py-2 px-4 md:px-6 items-center text-base">
-        <a href="/" className="flex items-center gap-3 text-green-700 group">
+        <a
+          href="/"
+          className="flex items-center gap-0.5 md:gap-1 text-green-700 group"
+        >
           <div
-            className="flex items-center justify-center w-10 h-10 
+            className="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 
                transition-transform  duration-300 
-               group-hover:scale-150 group-hover:text-green-600 "
+               group-hover:scale-150 group-hover:text-green-600 shrink-0"
           >
-            <FaMugHot className="text-xl" />
+            <FaMugHot className="text-lg md:text-lg" />
           </div>
 
-          <p className="text-lg md:text-xl font-bold tracking-tight transition-colors duration-300 group-hover:text-green-600">
+          <p className="text-base md:text-lg font-bold tracking-tight transition-colors duration-300 group-hover:text-green-600 leading-tight whitespace-nowrap">
             Espresso <span className="font-medium">Check</span>
           </p>
         </a>
 
-        {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 font-medium text-green-700">
           <a
             href="/"
@@ -51,7 +53,6 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
           className="md:hidden text-green-700 hover:text-green-600 transition-colors"
@@ -61,7 +62,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-white/80 backdrop-blur-md border-t border-green-400">
           <div className="flex flex-col gap-4 font-medium text-green-700 p-4">
