@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { FaMugHot, FaBars, FaTimes } from "react-icons/fa";
+import { FaMugHot, FaBars } from "react-icons/fa";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -55,15 +55,17 @@ export default function Navbar() {
 
         <button
           onClick={toggleMenu}
-          className="md:hidden text-green-700 hover:text-green-600 transition-colors"
+          className={`md:hidden transition-colors ${
+            isOpen ? "text-gray-600" : "text-green-700 hover:text-green-600"
+          }`}
           aria-label="Toggle menu"
         >
-          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          <FaBars size={24} />
         </button>
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white/80 backdrop-blur-md border-t border-green-400">
+        <div className="md:hidden bg-gray-100 backdrop-blur-md border-t border-green-400">
           <div className="flex flex-col gap-4 font-medium text-green-700 p-4">
             <a
               href="/"
